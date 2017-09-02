@@ -40,7 +40,7 @@ class CreatePost extends Component {
         'Content-Type': 'application/json'
       }
     })
-    .then(response => console.log('Successfully posted blog'))
+    .then(response => this.props.history.push('/'))
     .catch(error => console.log('Could not post blog'));
 
     this.setState({name:'', title:'', blog:''});
