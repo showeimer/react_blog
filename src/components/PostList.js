@@ -32,9 +32,11 @@ class PostList extends Component {
     });
 
     return(
-      <div>
+      <div className="container">
         <h1>Blog Entries</h1>
-        {blogs}
+        <section className="navbar-nav">
+          {blogs}
+        </section>
       </div>
     )
   }

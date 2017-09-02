@@ -6,13 +6,13 @@ class CreatePost extends Component {
 
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
-    this.handleEntryChange = this.handleEntryChange.bind(this);
+    this.handleBlogChange = this.handleBlogChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
     this.state = {
       name: '',
       title: '',
-      entry: ''
+      blog: ''
     }
   }
 
@@ -24,8 +24,8 @@ class CreatePost extends Component {
     this.setState({title: event.target.value});
   };
 
-  handleEntryChange = (event) => {
-    this.setState({entry: event.target.value});
+  handleBlogChange = (event) => {
+    this.setState({blog: event.target.value});
   }
 
   handleSubmit = (event) => {
@@ -43,22 +43,28 @@ class CreatePost extends Component {
     .then(response => console.log('Successfully posted blog'))
     .catch(error => console.log('Could not post blog'));
 
-    this.setState({name:'', title:'', entry:''});
+    this.setState({name:'', title:'', blog:''});
   }
 
   render() {
     return(
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="name">Author:</label>
-        <input name="name" type="text" value={this.state.name}onChange={this.handleNameChange} />
+      <form onSubmit={this.handleSubmit} className="container">
+        <div className="form-group">
+          <label htmlFor="name">Author:</label>
+          <input className="form-control" name="name" type="text" value={this.state.name}onChange={this.handleNameChange} />
+        </div>
 
-        <label htmlFor="title">Title:</label>
-        <input name="title" type="text" value={this.state.title}onChange={this.handleTitleChange} />
+        <div className="form-group">
+          <label htmlFor="title">Title:</label>
+          <input className="form-control" name="title" type="text" value={this.state.title}onChange={this.handleTitleChange} />
+        </div>
 
-        <label htmlFor="entry">Write your blog:</label>
-        <textarea name="entry" type="text" value={this.state.entry}onChange={this.handleEntryChange} />
+        <div className="form-group">
+          <label htmlFor="blog">Write your blog:</label>
+          <textarea className="form-control" rows="10" name="blog" type="text" value={this.state.blog}onChange={this.handleBlogChange} />
+        </div>
 
-        <button>Submit</button>
+        <button type="submit" className="btn btn-primary" href="/">Submit</button>
       </form>
     )
   }
