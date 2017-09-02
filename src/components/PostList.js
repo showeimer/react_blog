@@ -18,7 +18,7 @@ class PostList extends Component {
       return results.json();
     })
     .then(data => {
-      console.log(data);
+      // console.log(data);
       this.setState({entries: data});
     });
   }
@@ -27,7 +27,7 @@ class PostList extends Component {
 
     const blogs = this.state.entries.map((entry) => {
       return (
-        <Link to="/" key={entry._id}>{entry.title}</Link>
+        <Link to={`/blogs/${entry._id}`} key={entry._id}>{entry.title}</Link>
       )
     });
 
