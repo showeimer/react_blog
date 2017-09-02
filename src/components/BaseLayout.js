@@ -8,7 +8,7 @@ class BaseLayout extends Component{
         <nav>
           <NavLink activeClassName="selected" exact to="/">Home</NavLink>
           <NavLink activeClassName="selected" to="/create">Create Post</NavLink>
-          <NavLink activeClassName="selected" to="/all">All Posts</NavLink>
+          <NavLink activeClassName="selected" to="/blogs">All Posts</NavLink>
         </nav>
         {this.props.children}
       </div>

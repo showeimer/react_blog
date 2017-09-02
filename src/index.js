@@ -17,7 +17,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/" component={App} />
         <Route path="/create" component={CreatePost} />
-        <Route path="all" component={PostList} />
+        <Route path="/blogs" component={PostList} />
       </Switch>
     </BaseLayout>
   </BrowserRouter>
