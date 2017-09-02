@@ -1,12 +1,19 @@
-import React from 'react';
-import NavLink from 'react-router-dom';
+import React, {Component} from 'react';
+import {NavLink} from 'react-router-dom';
 
-const BaseLayout = () => {
-  return (
-    <div>
-      Baselayout
-    </div>
-  )
+class BaseLayout extends Component{
+  render() {
+    return (
+      <div>
+        <nav>
+          <NavLink activeClassName="selected" exact to="/">Home</NavLink>
+          <NavLink activeClassName="selected" to="/create">Create Post</NavLink>
+          <NavLink activeClassName="selected" to="/all">All Posts</NavLink>
+        </nav>
+        {this.props.children}
+      </div>
+    )
+  }
 }
 
 export default BaseLayout;
